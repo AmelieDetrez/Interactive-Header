@@ -15,7 +15,7 @@ function move(e) {
     context.stroke();
 };
 
-(function basicHeader() {
+(function header() {
     context.fillRect(0, 0, width, height);
     context.textAlign = "center";
     context.font = "bold 80pt Bebas Neue";
