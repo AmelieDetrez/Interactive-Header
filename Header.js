@@ -19,6 +19,12 @@ document.onmousemove = move;
 
 function move(e) {
     console.log(e.pageX);
-    context.fillStyle = "white";
+    context.fillStyle = Utils.hsla(Utils.randomNumber(10, 50), 100, 80, 100);;
     Utils.fillEllipse(e.pageX, e.pageY, Utils.randomNumber(-25, 5), Utils.randomNumber(-25, 5));
 };
+
+(function moon() {
+    //going to make some sort of animation with it//
+    context.fillStyle = "#EBD1B7";
+    Utils.fillEllipse(centerX, centerY - 200, 50, 50);
+})();
