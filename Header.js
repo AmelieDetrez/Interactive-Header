@@ -7,9 +7,15 @@ let height = context.canvas.height;
 let centerX = width / 2;
 let centerY = height / 2;
 
+//gradient from W3schools//
+var gradient = context.createRadialGradient(centerX, centerY - 200, 50, centerX, centerY - 200, 700);
+gradient.addColorStop(0, "#03133B");
+gradient.addColorStop(1, "#000007");
+
 document.onmousemove = move;
 
 (function basicHeader() {
+    context.fillStyle = gradient;
     context.fillRect(0, 0, width, height);
     context.textAlign = "center";
     context.font = "bold 80pt Bebas Neue";
@@ -19,7 +25,7 @@ document.onmousemove = move;
 
 function move(e) {
     console.log(e.pageX);
-    context.fillStyle = Utils.hsla(Utils.randomNumber(10, 50), 100, 80, 100);;
+    context.fillStyle = Utils.hsla(Utils.randomNumber(10, 50), 100, 85, 100);;
     Utils.fillEllipse(e.pageX, e.pageY, Utils.randomNumber(-25, 5), Utils.randomNumber(-25, 5));
 };
 
