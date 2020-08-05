@@ -1,5 +1,6 @@
 {
     "liveServer.settings.donotShowInfoMsg": true,
     "liveServer.settings.CustomBrowser": "chrome",
-    "liveServer.settings.ChromeDebuggingAttachment": true
+    "liveServer.settings.ChromeDebuggingAttachment": true,
+    "liveServer.settings.port": 5501
 }
