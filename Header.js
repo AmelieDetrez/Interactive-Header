@@ -13,20 +13,20 @@ let centerX = width / 2;
 let centerY = height / 2;
 
 //gradient from W3schools//
-var gradient = context.createRadialGradient(centerX, centerY - 200, 50, centerX, centerY - 200, 700);
+var gradient = context.createRadialGradient(centerX, centerY - 200, 50, centerX, centerY - 200, 600);
 
 gradient.addColorStop(0, "white");
-gradient.addColorStop(0.01, "#03133B");
+gradient.addColorStop(0.01, "lightyellow");
+gradient.addColorStop(0.2, "#264396");
+gradient.addColorStop(0.3, "#072370");
 gradient.addColorStop(1, "#000007");
 
 document.onmousemove = move;
 
-function move(e) {
-    console.log(e.pageX);
-    context.fillStyle = Utils.hsla(Utils.randomNumber(10, 50), 100, 85, 100);;
-    Utils.fillEllipse(e.pageX, e.pageY, Utils.randomNumber(-5, 5), Utils.randomNumber(-5, 5));
-    console.log(e.pageX);
-};
+(function moon() {
+    context.fillStyle = "#fff5d1";
+    Utils.fillEllipse(centerX, centerY - 200, 50, 50);
+})();
 
 (function basicHeader() {
     context.fillStyle = gradient;
@@ -37,18 +37,23 @@ function move(e) {
     context.fillText("Amélie Detrez", centerX, centerY);
 })();
 
+function move(e) {
+    context.fillStyle = Utils.hsla(Utils.randomNumber(10, 50), 100, 85, 100);;
+    context.beginPath();
+    context.fillStyle = Utils.hsla(Utils.randomNumber(40, 60), 100, 90, Utils.randomNumber(10, 100));
+    context.arc(e.pageX, e.pageY, Utils.randomNumber(1, 5), 0, Math.PI * 2);
+    context.fill();
+    context.closePath();
+    context.fillStyle = "rgba(0,0,0, 0.1)";
+    context.fillRect(0, 0, width, height);
+};
 
 
-(function moon() {
-    //base moon//
-    context.fillStyle = "#fff5d1";
-    Utils.fillEllipse(centerX, centerY - 200, 50, 50);
-})();
 
 function drawStar() {
     context.beginPath();
-    context.fillStyle = "white";
-    context.arc(x * Math.random(0, width), y * Math.random(0, height), 3, 0, Math.PI * 2);
+    context.fillStyle = Utils.hsla(Utils.randomNumber(40, 60), 100, 90, Utils.randomNumber(10, 100));
+    context.arc(x * Math.random(0, width), y * Math.random(0, height), Utils.randomNumber(1, 5), 0, Math.PI * 2);
     context.fill();
     context.closePath();
 }
@@ -62,4 +67,4 @@ function draw() {
     }
 }
 
-setInterval(draw, Math.random(0, 30));
+setInterval(draw, Math.random(0, 40));
