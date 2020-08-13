@@ -2,8 +2,8 @@
 import context from "./context/context.js";
 import * as Utils from "./context/utils.js";
 
-var x = 5000;
-var y = 5000;
+var x = 2500;
+var y = 2500;
 var dx = 2;
 var dy = 2;
 
@@ -46,6 +46,10 @@ function move(e) {
     context.closePath();
     context.fillStyle = "rgba(0,0,0, 0.1)";
     context.fillRect(0, 0, width, height);
+    context.textAlign = "center";
+    context.font = "bold 80pt Bebas Neue";
+    context.fillStyle = gradient;
+    context.fillText("Amélie Detrez", centerX, centerY);
 };
 
 
