@@ -2,6 +2,8 @@
 import context from "./context/context.js";
 import * as Utils from "./context/utils.js";
 
+canvas.height = 750;
+
 var x = 2500;
 var y = 2500;
 var dx = 2;
